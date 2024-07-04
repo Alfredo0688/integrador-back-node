@@ -1,6 +1,6 @@
 const {Sequelize} = require ("sequelize");
 
-const db = new Sequelize("node_db","root","",
+const db = new Sequelize("electronsa","root","",
     {
         host:"localhost",
         dialect:"mysql",
