@@ -1,9 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 const db = require("./data/db.js")
-const usuarioControlador = require("./routes/usuariosRouter.js");
+const usuarioController = require("./routes/usuariosRouter.js");
 const categoriasController = require("./routes/categoriasRouter.js");
 const productoController = require("./routes/productosRouter.js");
+const detallePedidoController = require("./routes/detalleCategoriaRouter.js");
+const pedidoController=require("./routes/pedidoRouter.js")
+const carritoController=require("./routes/carritosRouter.js")
 const app = express();
 const port = 3030;
 
@@ -13,9 +16,12 @@ app.get("/",(req,res)=>{
 
 app.use(cors()) // habilito el intercambio de información
 app.use(express.json()) // analiza los request
-app.use("/usuario",usuarioControlador);
+app.use("/usuario",usuarioController);
 app.use("/categoria",categoriasController);
 app.use("/producto",productoController);
+app.use("/detalle_pedido",detallePedidoController);
+app.use("/pedido",pedidoController);
+app.use("/carrito",carritoController);
 
 
 app.listen(port,()=>{

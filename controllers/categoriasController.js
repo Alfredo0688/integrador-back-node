@@ -1,4 +1,4 @@
-const modeloCategoria = require("../Model/categoriasModel.js")
+const modeloCategoria = require("../models/categoriasModel")
 
 /* CRUD - CREATE - READ - UPDATE - DELETE */
 

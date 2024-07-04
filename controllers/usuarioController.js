@@ -1,5 +1,5 @@
 const { DELETE } = require("sequelize/lib/query-types")
-const usuarioModel = require("../Model/usuarioModel")
+const usuarioModel = require("../models/usuarioModel")
 
 /* CRUD - CREATE - READ - UPDATE - DELETE */
 
