@@ -53,31 +53,44 @@
                 <div class="row mt-2 mb-2">
                     <div class="form-group col-md-4">
                         <label for="nombre">Nombre del Producto</label>
-                        <input type="text" class="form-control" id="nombre" placeholder="nombre del producto">
+                        <input type="text" class="form-control" id="nombre" placeholder="nombre del producto" required>
                     </div>
                     <!-- Modelo del producto -->
                     <div class="form-group col-md-4">
                         <label for="modelo">Modelo</label>
-                        <input type="text" class="form-control" id="modelo" placeholder="modelo del producto">
+                        <input type="text" class="form-control" id="modelo" placeholder="modelo del producto" required>
                     </div>
                     <!-- Marca del producto -->
                     <div class="form-group col-md-4">
                         <label for="marca">Marca</label>
-                        <input type="text" class="form-control" id="marca" placeholder="marca del producto">
+                        <input type="text" class="form-control" id="marca" placeholder="marca del producto" required>
                     </div>
                 </div>
                 <div class="row mb-2">
-                    <!-- Imagen del producto -->
-                    <div class="form-group col-md-4">
+                    <!-- Precio del producto -->
+                    <div class="form-group col-md-3">
+                        <label for="precio">Precio</label>
+                        <input type="number" class="form-control" id="precio" placeholder="precio producto" required>
+                    </div>
+                   
+                    <!-- Cantidad del producto -->
+                    <div class="form-group col-md-3">
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" class="form-control" id="cantidad" placeholder="cantidad disponible" required>
+                    </div>
+                    <!-- Select de categoria -->
+                     <div class="col-md-3">
+                        <label for="slc_categoria">Categorias</label>
+                        <select class="form-select" aria-label="Default select example" id="slc_categoria" required>
+                            
+                          </select>
+                     </div>
+                      <!-- Imagen del producto -->
+                    <div class="form-group col-md-3">
                         <label for="imagen">URL de la Imagen</label>
                         <input type="text" class="form-control" id="imagen" placeholder="URL de la imagen del producto">
                     </div>
-                    <!-- Cantidad del producto -->
-                    <div class="form-group col-md-4">
-                        <label for="cantidad">Cantidad</label>
-                        <input type="number" class="form-control" id="cantidad" placeholder="cantidad disponible">
-                    </div>
-
+ 
                 </div>
                 <!-- Botón de enviar -->
                 <button type="submit" class="btn btn-primary">Guardar Producto</button>
@@ -100,8 +113,8 @@
             </table>
         </div>
     </section>
-    <!--   cargar el CDN de Axios -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!--   cargar el CDN de Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
