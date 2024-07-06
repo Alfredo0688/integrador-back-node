@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
         botonEditar.classList.add("ml-1");
         botonEditar.textContent = "Editar";
         botonEditar.addEventListener("click", () => {
-          // Redirigir a la pagina de edicion  con el ID del post en la url
-          //window.location.href = `edit.html?id=${posteo.id}`;
+           //Redirigir a la pagina de edicion  con el ID del post en la url
+           window.location.href = `categoriaEditar.html?id=${categoria.id}`;
         });
 
         // crear el boton de eliminar
@@ -60,11 +60,17 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchCategoria();
 
   //agregar categoria
-  formulario.addEventListener("submit",()=>{
+  formulario.addEventListener("submit", async (event)=>{
     try {
-        alert("hola");
+        event.preventDefault();
+        const nuevaCategoria={
+            nombre:document.querySelector("#nombre").value
+        }
+        const respuesta = await axios.post(`http://localhost:3030/categorias/`,nuevaCategoria)
+        console.log(respuesta);
+        fetchCategoria();
     } catch (error) {
-        
+        console.log(error)
     }
   })
 
