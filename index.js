@@ -7,6 +7,7 @@ const productoController = require("./routes/productosRouter.js");
 const detallePedidoController = require("./routes/detalleCategoriaRouter.js");
 const pedidoController=require("./routes/pedidoRouter.js");
 const carritoController=require("./routes/carritosRouter.js");
+const clienteRouter = require("./routes/clienteRouter.js");
 
 const app = express();
 const port = 3030;
@@ -41,3 +42,4 @@ app.use("/productos",productoController);
 app.use("/detalle_pedidos",detallePedidoController);
 app.use("/pedidos",pedidoController);
 app.use("/carritos",carritoController);
+app.use("/clientes",clienteRouter);
