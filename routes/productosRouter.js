@@ -1,7 +1,7 @@
 const express = require("express")
 const  {obtenerProductos,crearProducto,obtenerProducto,editarProducto,borrarProducto} =require("../controllers/productosController")
 
-const router = express.Router();
+const router = express.Router()
 
 router.get("/",obtenerProductos);
 router.get("/:id",obtenerProducto);

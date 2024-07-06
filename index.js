@@ -14,14 +14,6 @@ app.get("/",(req,res)=>{
   res.send(`PAGINA DE INICIO`);
 })
 
-app.use(cors()) // habilito el intercambio de información
-app.use(express.json()) // analiza los request
-app.use("/usuario",usuarioController);
-app.use("/categoria",categoriasController);
-app.use("/producto",productoController);
-app.use("/detalle_pedido",detallePedidoController);
-app.use("/pedido",pedidoController);
-app.use("/carrito",carritoController);
 
 
 app.listen(port,()=>{
@@ -39,3 +31,12 @@ const conexionDB = async ()=>{
       console.log(`Hay un error y es el siguiente : ${error}`);
   }
 }
+
+app.use(cors()) // habilito el intercambio de información
+app.use(express.json()) // analiza los request
+app.use("/usuarios",usuarioController);
+app.use("/categorias",categoriasController);
+app.use("/productos",productoController);
+app.use("/detalle_pedidos",detallePedidoController);
+app.use("/pedidos",pedidoController);
+app.use("/carritos",carritoController);
