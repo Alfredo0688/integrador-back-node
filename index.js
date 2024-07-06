@@ -1,12 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const db = require("./data/db.js")
-const usuarioController = require("./routes/usuariosRouter.js");
+const usuarioRouter = require("./routes/usuariosRouter.js");
 const categoriasController = require("./routes/categoriasRouter.js");
 const productoController = require("./routes/productosRouter.js");
 const detallePedidoController = require("./routes/detalleCategoriaRouter.js");
-const pedidoController=require("./routes/pedidoRouter.js")
-const carritoController=require("./routes/carritosRouter.js")
+const pedidoController=require("./routes/pedidoRouter.js");
+const carritoController=require("./routes/carritosRouter.js");
+
 const app = express();
 const port = 3030;
 
@@ -34,7 +35,7 @@ const conexionDB = async ()=>{
 
 app.use(cors()) // habilito el intercambio de información
 app.use(express.json()) // analiza los request
-app.use("/usuarios",usuarioController);
+app.use("/usuarios",usuarioRouter);
 app.use("/categorias",categoriasController);
 app.use("/productos",productoController);
 app.use("/detalle_pedidos",detallePedidoController);
