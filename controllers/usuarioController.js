@@ -7,7 +7,7 @@ const usuarioModel = require("../models/usuarioModel")
 
 const obtenerUsuarios =async(req,res)=>{
     try {
-        const usuarios = await usuarioModel.findAll;
+        const usuarios = await usuarioModel.findAll();
         res.json(usuarios);
     } catch (error) {
         res.json({messeger:error.messeger})
@@ -15,7 +15,7 @@ const obtenerUsuarios =async(req,res)=>{
 
 }
 
-const crearUsuarios =async(req,res)=>{
+const crearUsuario =async(req,res)=>{
     try {
         const usuarios = await usuarioModel.create(req.body);
         res.json("usuario creado correctamente");
@@ -46,4 +46,4 @@ try {
 }
 }
 
-module.exports ={obtenerUsuarios,crearUsuarios,editarUsuario,borrarUsuario}
+module.exports ={obtenerUsuarios,crearUsuario,editarUsuario,borrarUsuario}

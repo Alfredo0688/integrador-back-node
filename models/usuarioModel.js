@@ -5,8 +5,7 @@ const {DataTypes} = require ("sequelize")
 
 const usuarioModel = db.define("usuarios",{
     usuario:{type:DataTypes.STRING},
-    password:{type:DataTypes.STRING},
-    telefono:{type:DataTypes.NUMBER}
+    contrasenia:{type:DataTypes.STRING},
     
 });
 

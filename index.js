@@ -2,12 +2,13 @@ const express = require("express");
 const cors = require("cors");
 const db = require("./data/db.js")
 const usuarioRouter = require("./routes/usuariosRouter.js");
-const categoriasController = require("./routes/categoriasRouter.js");
-const productoController = require("./routes/productosRouter.js");
-const detallePedidoController = require("./routes/detalleCategoriaRouter.js");
-const pedidoController=require("./routes/pedidoRouter.js");
-const carritoController=require("./routes/carritosRouter.js");
-const clienteRouter = require("./routes/clienteRouter.js");
+const categoriasRouter = require("./routes/categoriasRouter.js");
+const productoRouter = require ("./routes/productosRouter.js");
+const detallePedidoRouter = require ("./routes/detalleCategoriaRouter.js");
+const pedidoRouter=require ("./routes/pedidoRouter.js");
+const carritoRouter=require ("./routes/carritosRouter.js");
+const clienteRouter = require ("./routes/clientesRouter.js");
+const estadoRouter = require ("./routes/estado.js");
 
 const app = express();
 const port = 3030;
@@ -37,9 +38,10 @@ const conexionDB = async ()=>{
 app.use(cors()) // habilito el intercambio de información
 app.use(express.json()) // analiza los request
 app.use("/usuarios",usuarioRouter);
-app.use("/categorias",categoriasController);
-app.use("/productos",productoController);
-app.use("/detalle_pedidos",detallePedidoController);
-app.use("/pedidos",pedidoController);
-app.use("/carritos",carritoController);
+app.use("/categorias",categoriasRouter);
+app.use("/productos",productoRouter);
+app.use("/detalle_pedidos",detallePedidoRouter);
+app.use("/pedidos",pedidoRouter);
+app.use("/carritos",carritoRouter);
 app.use("/clientes",clienteRouter);
+app.use("/estado",estadoRouter);

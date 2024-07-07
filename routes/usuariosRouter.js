@@ -2,13 +2,13 @@ const express = require("express");
 
 
 //controladores 
-const {crearUsuarios,obtenerUsuarios,editarUsuario,borrarUsuario} = require("../controllers/usuarioController")
+const {crearUsuario,obtenerUsuarios,editarUsuario,borrarUsuario} = require("../controllers/usuarioController")
 
 /* configuracion de rutas express // metodos de HTTP */
 
 const router = express.Router();
 router.get("/",obtenerUsuarios)
-router.post("/",crearUsuarios)
+router.post("/",crearUsuario)
 router.put("/:id", editarUsuario);
 router.delete("/:id", borrarUsuario);
 

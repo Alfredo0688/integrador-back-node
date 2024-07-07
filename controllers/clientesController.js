@@ -4,7 +4,7 @@ const modeloCliente = require("../models/clientesModel")
 
 /* FUNCION PARA TRAER TODOS LOS POSTEOS = READ - GET */
 
-const obtenerclientes =async(req,res)=>{
+const obtenerClientes = async(req,res)=>{
     try {
         const clientes = await modeloCliente.findAll()
         res.json(clientes);
@@ -14,7 +14,7 @@ const obtenerclientes =async(req,res)=>{
     }
 }
 
-const obtenercliente=async(res,req)=>{
+const obtenerCliente = async(res,req)=>{
     try {
         const cliente = await modeloCliente.findByPk(req.params.id);
         res.json(cliente)
@@ -23,7 +23,7 @@ const obtenercliente=async(res,req)=>{
     }
 }
 
-const crearcliente = async(req,res)=>{
+const crearCliente = async(req,res)=>{
     try {
         const newcliente = await modeloCliente.create(req.body)
         res.json("registro creado correctamente")
@@ -32,7 +32,7 @@ const crearcliente = async(req,res)=>{
     }
 }
 
-const editarcliente=async(res,req)=>{
+const editarCliente = async(res,req)=>{
     try {
         await modeloCliente.update(req.body,
             {where:{id:req.params.id}})
@@ -42,7 +42,7 @@ const editarcliente=async(res,req)=>{
     }
 }
 
-const borrarcliente = async (req,res)=>{
+const borrarCliente = async (req,res)=>{
     try {
         await modeloCliente.destroy( { where:{id:req.params.id}})
         res.json("cliente borrado correctamente")
@@ -51,4 +51,4 @@ const borrarcliente = async (req,res)=>{
     }
 }
 
-module.exports ={obtenerclientes,crearcliente,obtenercliente,editarcliente,borrarcliente}
+module.exports ={obtenerClientes,crearCliente,obtenerCliente,editarCliente,borrarCliente}
