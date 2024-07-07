@@ -1,3 +1,4 @@
+const { DELETE } = require("sequelize/lib/query-types")
 const modeloCategoria = require("../models/categoriasModel")
 
 /* CRUD - CREATE - READ - UPDATE - DELETE */
@@ -14,12 +15,13 @@ const obtenerCategorias =async(req,res)=>{
     }
 }
 
-const obtenerCategoria=async(res,req)=>{
+const obtenerCategoria=async(req,res)=>{
     try {
+        console.log(req.params.id);
         const categoria = await modeloCategoria.findByPk(req.params.id);
         res.json(categoria)
     } catch (error) {
-        res.json({message:error.message})
+        //res.json({message:error.message})
     }
 }
 
@@ -32,7 +34,7 @@ const crearCategoria = async(req,res)=>{
     }
 }
 
-const editarCategoria=async(res,req)=>{
+const editarCategoria=async(req,res)=>{
     try {
         await modeloCategoria.update(req.body,
             {where:{id:req.params.id}})

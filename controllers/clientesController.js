@@ -14,7 +14,7 @@ const obtenerclientes =async(req,res)=>{
     }
 }
 
-const obtenercliente=async(res,req)=>{
+const obtenercliente=async(req,res)=>{
     try {
         const cliente = await modeloCliente.findByPk(req.params.id);
         res.json(cliente)
@@ -32,7 +32,7 @@ const crearcliente = async(req,res)=>{
     }
 }
 
-const editarcliente=async(res,req)=>{
+const editarcliente=async(req,res)=>{
     try {
         await modeloCliente.update(req.body,
             {where:{id:req.params.id}})
