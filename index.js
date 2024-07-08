@@ -12,6 +12,7 @@ const carritoRouter = require("./routes/carritosRouter.js");
 const clienteRouter = require("./routes/clientesRouter.js");
 const estadoRouter = require("./routes/estadoRouter.js");
 const coloresRouter = require("./routes/coloresRouter.js");
+const comentariosRouter = require("./routes/comentariosRouter.js");
 
 
 app.get("/", (req, res) => {
@@ -47,3 +48,4 @@ app.use("/carritos", carritoRouter);
 app.use("/clientes", clienteRouter);
 app.use("/estado", estadoRouter);
 app.use("/colores", coloresRouter);
+app.use("/comentarios",comentariosRouter);

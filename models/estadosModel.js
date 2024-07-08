@@ -2,8 +2,8 @@ const db = require("../data/db")
 
 const {DataTypes} = require("sequelize")
 
-const estadoModel = db.define("estados",{
+const estadosModel = db.define("estados",{
     estado:{type:DataTypes.STRING}
 })
 
-module.exports = estadoModel
+module.exports = estadosModel
