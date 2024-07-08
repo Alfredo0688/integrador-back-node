@@ -1,5 +1,7 @@
 const db = require("../data/db");
 const { DataTypes } = require("sequelize");
+const categorias = require("../models/categoriasModel")
+const colores = require("../models/coloresModels")
 
 const productosModel = db.define('productos', {
   marca: {
@@ -8,10 +10,6 @@ const productosModel = db.define('productos', {
   },
   nombre: {
     type: DataTypes.STRING
-    
-  },
-  id_color: {
-    type: DataTypes.INTEGER
     
   },
   modelo: {
@@ -29,14 +27,14 @@ const productosModel = db.define('productos', {
   cantidad: {
     type: DataTypes.INTEGER
     
-  },
-  id_categoria: {
-    type: DataTypes.INTEGER
-    
   }
 });
 
-productosModel.sync({ force: false }) // Cambia a true para forzar la sincronización y eliminar datos existentes
+//definir la relaciones 1 a 1 con color y categoria
+productosModel.belongsTo(colores,{foreignKey:'id_color',allowNull:false})
+productosModel.belongsTo(categorias,{foreignKey:'id_categoria',allowNull:false})
+
+db.sync({ force: false }) // Cambia a true para forzar la sincronización y eliminar datos existentes
   .then(() => {
     console.log('Modelos sincronizados correctamente con la base de datos');
     // Inicia tu servidor Node.js aquí o realiza otras operaciones

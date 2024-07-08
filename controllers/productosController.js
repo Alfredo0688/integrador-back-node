@@ -9,15 +9,15 @@ const crearProducto = async (req, res) => {
   }
 };
 
-const obtenerProductos = async (req, res) => {
+const obtenerProductos =async(req,res)=>{
   try {
-    const producto = modeloProducto.findAll();
-    res.json(producto);
-  } catch (error) {
-    res.json({ message: error.message });
+      const productos = await modeloProducto.findAll()
+      res.json(productos);
   }
-};
-
+   catch (error) {
+      res.json({message:error.message})
+  }
+}
 const obtenerProducto = async (req, res) => {
   try {
     const producto = modeloProducto.findByPk(req.params.id);
