@@ -1,0 +1,249 @@
+main{
+    display: grid;
+    grid-template-areas: 
+    "header header header header header"
+    "aside section section section section"
+    "footer footer footer footer footer";
+    background-color: #ebebeb;
+}
+header{grid-area: head;}
+aside{grid-area: aside;}
+section{grid-area: section;}
+footer{grid-area: footer;}
+.contenedorPrudcto{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap:5px ;
+   
+}
+.cardProducto{
+    font-family: "nunito", sans-serif;
+    background-color: #ffff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 5px solid #ffff;
+    border-radius: 15px;
+
+    
+}
+.cardImagen{
+    width: 100%;
+    height: 250px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 1px;
+}
+.cardProducto img{
+    width: inherit;
+    height: inherit;
+}
+.alertProdDesc{
+    background-color: red;
+    height: 20px;
+    width: 70px;
+    border-radius: 15px;
+    display: inline-block;
+    font-size: 15px;
+    margin:15px;
+    color: #ffff;
+}
+
+.alertProdAviso{
+    background-color:rgb(204, 204, 15);
+    width: 70%;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 2px 10px;
+    font-size: 13px;
+    margin:15px;
+    color: #ffff;
+}
+.cardDetalle{
+    margin-top: 10px;
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+.cardDetalle span{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.cardPrecios{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+   
+}
+.tituloProducto{
+    font-size: 16px;
+    text-align: start;
+    font-weight: 700;
+}
+.precioProducto{
+    font-weight: 800;
+    font-size: 20px;
+}
+.precioOriginal{
+    text-decoration: line-through;
+}
+.titleCuotas{
+    font-size: 14px;
+}
+.cardButton{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cardButton button{
+    width: 70%;
+    font-style: 20px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    background-color: #34495e;
+    color: #ffff;
+    font-weight: 600;
+}
+
+.asideButton{
+    display: none;
+}
+.asideDesplegable{
+    display: flex;
+    justify-content:start;
+    flex-direction: column;
+    margin :20px;
+    width: 200px;
+    font-family: "nunito", sans-serif;
+    
+}
+.asideDesplegable .textCategoria{
+    margin: 20px 10px 5px 5px;
+    font-size: 20px;
+    padding-left: 8px;
+    text-transform: uppercase;
+}
+.asideDesplegable ul {
+ display:contents;
+ width: 100%;
+}
+.asideDesplegable ul li{
+    display: flex;
+    align-items: flex-end;
+    font-size: 14px;
+    width: 90%;
+    color: #2c3e50;
+    fill: #2c3e50;
+    height: 40px;
+    margin-left: 6px;
+    border-bottom: 2px solid ;
+}
+.cartelDeplegable{
+    transition: transform 2s ease-in-out, opacity 2s ease-in-out;
+}
+.move {
+    transform: translateX(300px);
+    opacity: 0;
+  }
+.textFiltrar{
+    margin-top: 30px;
+    font-size: 18px;
+}
+.selectCategoria{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.selectCategoria .titleCategoria{
+    font-size: 1.2 rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.selectCategoria div{
+    margin-top:  15px;
+    margin-left: 30px;
+    font-size: 14px;
+}
+.selectCategoria div input{
+    margin: 0 10px;
+    
+}
+.PointColor{
+    display: inline-block;
+    margin-left: 20px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    
+}
+@media only screen and (max-width: 700px) {
+   
+    main{
+        display: grid;
+        grid-template-areas: 
+        "header eader"
+        "aside aside" 
+        "section section"
+        "footer footer";
+    }
+    .asideButton{
+       display: block;
+    }
+    .asideFiltre{
+        display: flex;
+        flex-direction: row;
+        margin-top: 15px;
+        justify-content: space-evenly;
+    }
+    .contenedorPrudcto{
+        grid-template-columns: 1fr 1fr;
+        padding: 10px;
+    }
+    .alertProdDesc{
+        font-size: 12px;
+        height: 20px;
+    }
+    .alertProdAviso{
+        width: 70%;
+        font-size: 11px;
+    }
+    .cardImagen{
+        height: 160px;
+    }
+    .asideDesplegable{
+        display: none;
+    }
+    .tituloProducto{
+        font-size: 16px;
+    }
+    .precioProducto{
+        font-size: 14px;
+    }
+    .precioOriginal{
+        font-size: 12px;
+    }
+    .titleCuotas{
+        font-size: 12px;
+    }
+    .divCategoriaProd{
+        display: none;
+    } 
+    .btnFiltre{
+        border :none;
+        cursor: pointer;
+    }
+    .btnFiltre::selection{
+       color: #b12328;
+    }
+    .asideDesplegable.active{
+        display: block;
+    }
+}

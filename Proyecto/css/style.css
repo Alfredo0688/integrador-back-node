@@ -1,0 +1,422 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "nunito", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background-color: #34495e;
+  color: white;
+}
+
+.logo img {
+  width: 90px;
+  height: 100%;
+}
+
+.menuNav {
+  width: 100%;
+  background-color: #b12328;
+  height: 30px;
+  padding: 0;
+}
+
+.menuIngreso {
+  float: right;
+  margin-right: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuIngreso a {
+  color: #ffff;
+  font-size: 0.7rem;
+  padding: 0px 10px;
+}
+
+.searcItems {
+  border: 3px solid #ffff;
+  border-radius: 40px;
+  height: 70px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchNav button {
+  width: 20%;
+  display: inline-block;
+  background: none;
+  border: none;
+}
+
+.searchNav i {
+  color: #ffff;
+  font-size: 30px;
+}
+
+.searchNav input::placeholder {
+  color: #ffff;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.searchNav {
+  padding-left: 30px;
+}
+
+.searchNav input {
+  width: 75%;
+  background: none;
+  border: none;
+  height: 50px;
+  text-align: center;
+  font-weight: 500;
+  color: #ffff;
+  outline: none;
+  font-size: 22px;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 90%;
+  margin: 0 auto;
+}
+
+.nav-container .logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  flex-grow: 1;
+}
+/*
+.nav--ul__one {
+    margin: 0 auto;
+}*/
+
+.nav--ul__one li a {
+  color: #fff;
+}
+
+.nav-container,
+/*Modificado por Alfredo 
+.nav--ul__one,*/
+.nav--ul__two {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  font-size: 1rem;
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.titleProductoDestacado {
+  text-align: center;
+  font-size: 50px;
+  color: #b12328;
+  font-weight: 500;
+}
+
+.cardProdDestc img {
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.divTitleProductoDestacado {
+  padding: 30px;
+}
+
+.cardProdDestc p {
+  margin: 20px 0;
+  text-align: center;
+  /*modificado por Alfredo */
+  font-size: 100%;
+}
+
+.titleTestimonios {
+  color: #fff;
+  font-size: 40px;
+  width: 100%;
+  padding-top: 60px;
+  padding-left: 40px;
+  padding-bottom: 30px;
+}
+
+.testimonios {
+  background-color: #34495e;
+}
+
+.cardsTestimonios {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+footer {
+  background-color: #b12328;
+  color: #ffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer img {
+  background: none !important;
+  border: none !important;
+}
+
+footer h3,
+p {
+  text-align: center;
+}
+
+#redesSociales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#redesSociales i {
+  color: #ffff;
+  font-size: 40px;
+  padding: 20px;
+}
+
+#redesSociales span {
+  display: inline-block;
+  text-align: center;
+}
+
+iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Hasta los 700px tomará los estilos en { } */
+@media only screen and (max-width: 700px) {
+  .nav-container .logo {
+    font-size: 1.2rem;
+    z-index: 2;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  #carouselExampleFade {
+    z-index: -1;
+  }
+
+  /*.nav--ul__one,*/
+  .lista {
+    width: 50%;
+  }
+
+  .lista li {
+    display: block;
+  }
+
+  .lista li a {
+    color: #fff;
+  }
+
+  .nav--ul__two {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .hamburger-menu {
+    display: block;
+
+    z-index: 2;
+  }
+
+  .nav {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    width: 100%;
+
+    padding-top: 6rem;
+
+    align-items: center;
+    text-align: center;
+    background-color: #34495e;
+    color: white;
+
+    transition: 0.15s ease-in-out;
+    /* agregado por Alfredo*/
+    display: none;
+  }
+
+  .nav.active {
+    right: 0;
+    /* agregado por Alfredo*/
+    display: flex;
+  }
+
+  section {
+    width: 100%;
+  }
+
+  .divTitleProductoDestacado {
+    padding: 0;
+  }
+
+  .titleProductoDestacado,
+  .titleTestimonios {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .cardProdDestc p {
+    font-size: 0.8rem;
+  }
+
+  .cardProdDestc img {
+    width: 70%;
+  }
+
+  .redesSociales h3,
+  .direccion h3 {
+    font-size: 0.5 rem;
+  }
+
+  .redesSociales p,
+  .direccion p{
+    font-size: 0.7rem;
+  }
+
+  #redesSociales i {
+    font-size: 25px;
+  }
+
+  iframe {
+    height: 100px;
+  }
+
+  .cardsTestimonios{
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+  }
+  .cardTestimonio {
+    width: 10rem !important;
+  }
+  .cardProdDestc{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  }
+}
+
+/*Contacto */
+main#seccionContacto form {
+  width: 80%;
+  margin: 1px auto;
+ 
+}
+
+main#seccionContacto form div.row {
+  width: 50%;
+  margin: 5% auto;
+}
+
+main#seccionContacto form div.rowPersonalizado {
+  margin: 4% auto;
+  text-align: center;
+}
+
+main#seccionContacto form h2 {
+  text-align: center;
+}
+
+main#seccionContacto form div.row input {
+  width: 100%;
+}
+
+.filaTextArea,
+.filaBtn {
+  width: 100%;
+}
+
+form label {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 701px) {
+  /*lista del header */
+  .lista {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .lista li {
+    display: inline-block;
+  }
+
+  .lista li a {
+    color: #fff;
+  }
+
+}
+
+#estiloResponseError {
+  color: red;
+}
+#estiloResponseValido {
+  color: green;
+}
+.cardProd:hover {
+  transform: scale(1.1);
+}
+/*Sección nosotros */
+main#seccionNosotros {
+  padding: 1%;
+  background-image: url(../img/personal.jpg);
+  height: 544px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main#seccionNosotros p {
+  line-height: 1.9rem;
+  color: black;
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 1px solid;
+  background-color: rgba(255, 255, 255, 0.7);
+}

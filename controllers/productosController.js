@@ -2,7 +2,7 @@ const modeloProducto = require("../models/productosModel");
 
 const crearProducto = async (req, res) => {
   try {
-    const producto = modeloProducto.create(req.body);
+    const producto = await modeloProducto.create(req.body);
     res.json(producto);
   } catch (error) {
     res.json({ message: error.message });
@@ -20,7 +20,7 @@ const obtenerProductos =async(req,res)=>{
 }
 const obtenerProducto = async (req, res) => {
   try {
-    const producto = modeloProducto.findByPk(req.params.id);
+    const producto = await modeloProducto.findByPk(req.params.id);
     res.json(producto);
   } catch (error) {
     res.json({ message: error.message });
@@ -38,7 +38,7 @@ const editarProducto = async (req, res) => {
   }
 };
 
-const borrarProducto = async (req, res) => {
+const borrarProducto = async (req,res) => {
   try {
     await modeloProducto.destroy({
       where: {id:req.params.id },

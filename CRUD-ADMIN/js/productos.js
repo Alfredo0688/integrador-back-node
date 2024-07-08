@@ -84,19 +84,19 @@ document.addEventListener("DOMContentLoaded", () => {
         botonEditar.textContent = "Editar";
         botonEditar.classList.add("btn");
         botonEditar.classList.add("btn-warning");
-        // botonEditar.addEventListener("click", () => {
-        //   // Redirigir a la pagina de edicion  con el ID del post en la url
-        //   //window.location.href = `edit.html?id=${posteo.id}`;
-        // });
+        botonEditar.addEventListener("click", () => {
+          // Redirigir a la pagina de edicion  con el ID del post en la url
+          window.location.href = `productosEdit.html?id=${producto.id}`;
+        });
 
         // crear el boton de eliminar
         const botonEliminar = document.createElement("button");
         botonEliminar.textContent = "Eliminar";
         botonEliminar.classList.add("btn");
         botonEliminar.classList.add("btn-danger");
-        // botonEliminar.addEventListener("click", () => {
-        //   //borrarProducto(producto.id);
-        // });
+        botonEliminar.addEventListener("click", () => {
+          borrarProducto(producto.id);
+        });
 
         // agregar los botones a la celda de acciones
         celdaAcciones.appendChild(botonEliminar);
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
       modelo: document.querySelector("#modelo").value,
       cantidad: document.querySelector("#cantidad").value,
       precio: document.querySelector("#precio").value,
-      color: document.querySelector("#slc_color").value,
+      id_color: document.querySelector("#slc_color").value,
       foto: document.querySelector("#imagen").value,
       id_categoria: document.querySelector("#slc_categoria").value,
     };
@@ -144,6 +144,18 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(`Error al postear` + error);
     }
   });
+
+  //eliminar producto
+  const borrarProducto = async(id)=>{
+
+    try {
+      await axios.delete(`http://localhost:3030/productos/${id}`)
+      fetchProductos();
+      console.log("prodcuto eliminado");
+    } catch (error) {
+      console.log("prodcuto no eliminado");
+    }
+  }
 
   fetchProductos();
   fetchCategoria();

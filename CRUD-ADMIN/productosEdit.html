@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INICIO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https: //fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-primary navbar bg-primary">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                ADMINISTRACIÓN
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="productos.html">PRODUCTOS</a></li>
+                                <li><a class="dropdown-item" href="categorias.html">CATEGORIAS</a></li>
+                                <li><a class="dropdown-item" href="roles.html">ROLES</a></li>
+                                <li><a class="dropdown-item" href="usuarios.html">USUARIOS</a></li>
+                                <li><a class="dropdown-item" href="pedidos.html">PEDIDOS</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <section>
+        <div class="container mt-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="inicio.html">INCIO</a></li>
+                    <li class="breadcrumb-item"><a href="productos.html">PRODUCTO</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">EDITAR</li>
+                </ol>
+            </nav>
+            <h2>Formulario de Producto</h2>
+            <form id="formProducto">
+                <div class="row">
+                     <!-- Nombre del producto -->
+                     <div class="form-group col-md-12">
+                        <label for="nombre">Nombre del Producto</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="nombre del producto" required>
+                    </div>
+                </div>
+           
+                <div class="row mt-2 mb-2">
+                  
+                    <!-- Modelo del producto -->
+                    <div class="form-group col-md-4">
+                        <label for="modelo">Modelo</label>
+                        <input type="text" class="form-control" id="modelo" placeholder="modelo del producto" required>
+                    </div>
+                    <!-- Marca del producto -->
+                    <div class="form-group col-md-4">
+                        <label for="marca">Marca</label>
+                        <input type="text" class="form-control" id="marca" placeholder="marca del producto" required>
+                    </div>
+                    <!-- Select de color -->
+                    <div class="col-md-3">
+                        <label for="slc_color">Color</label>
+                        <select class="form-select" aria-label="Default select example" id="slc_color" required>
+                            
+                          </select>
+                     </div>
+                </div>
+                <div class="row mb-2">
+                    <!-- Precio del producto -->
+                    <div class="form-group col-md-3">
+                        <label for="precio">Precio</label>
+                        <input type="text" class="form-control" id="precio" placeholder="precio producto" required>
+                    </div>
+                   
+                    <!-- Cantidad del producto -->
+                    <div class="form-group col-md-3">
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" class="form-control" id="cantidad" placeholder="cantidad disponible" required>
+                    </div>
+                    <!-- Select de categoria -->
+                     <div class="col-md-3">
+                        <label for="slc_categoria">Categorias</label>
+                        <select class="form-select" aria-label="Default select example" id="slc_categoria" required>
+                            
+                          </select>
+                     </div>
+                      <!-- Imagen del producto -->
+                    <div class="form-group col-md-3">
+                        <label for="imagen">URL de la Imagen</label>
+                        <input type="text" class="form-control" id="imagen" placeholder="URL de la imagen del producto">
+                    </div>
+ 
+                </div>
+                <!-- Botón de enviar -->
+                <button type="submit" class="btn btn-warning">Editar Producto</button>
+            </form>
+            
+        </div>
+    </section>
+  <!--   cargar el CDN de Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="../CRUD-ADMIN/js/productosEditar.js"></script>
+</body>
+
+</html>
