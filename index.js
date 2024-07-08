@@ -54,8 +54,5 @@ app.use("/detalle_pedidos",detallePedidoRouter);
 app.use("/pedidos",pedidoRouter);
 app.use("/carritos",carritoRouter);
 app.use("/clientes",clienteRouter);
-<<<<<<< HEAD
 app.use("/estado",estadoRouter);
-=======
 app.use("/colores",coloresRouter);
->>>>>>> aa4233cce5c7191a4c9ae77930d068cdd1a5b677
