@@ -4,7 +4,6 @@ const db = require("./data/db.js")
 const app = express();
 const port = 3030;
 const usuarioRouter = require("./routes/usuariosRouter.js");
-<<<<<<< HEAD
 const categoriasRouter = require("./routes/categoriasRouter.js");
 const productoRouter = require ("./routes/productosRouter.js");
 const detallePedidoRouter = require ("./routes/detalleCategoriaRouter.js");
@@ -12,15 +11,7 @@ const pedidoRouter=require ("./routes/pedidoRouter.js");
 const carritoRouter=require ("./routes/carritosRouter.js");
 const clienteRouter = require ("./routes/clientesRouter.js");
 const estadoRouter = require ("./routes/estado.js");
-=======
-const categoriasController = require("./routes/categoriasRouter.js");
-const productoController = require("./routes/productosRouter.js");
-const detallePedidoController = require("./routes/detalleCategoriaRouter.js");
-const pedidoController=require("./routes/pedidoRouter.js");
-const carritoController=require("./routes/carritosRouter.js");
-const clienteRouter = require("./routes/clientesRouter.js");
 const coloresRouter = require("./routes/coloresRouter.js");
->>>>>>> aa4233cce5c7191a4c9ae77930d068cdd1a5b677
 
 
 app.get("/",(req,res)=>{
