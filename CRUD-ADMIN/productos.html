@@ -49,12 +49,16 @@
             </nav>
             <h2>Formulario de Producto</h2>
             <form id="formProducto">
-                <!-- Nombre del producto -->
-                <div class="row mt-2 mb-2">
-                    <div class="form-group col-md-4">
+                <div class="row">
+                     <!-- Nombre del producto -->
+                     <div class="form-group col-md-12">
                         <label for="nombre">Nombre del Producto</label>
                         <input type="text" class="form-control" id="nombre" placeholder="nombre del producto" required>
                     </div>
+                </div>
+           
+                <div class="row mt-2 mb-2">
+                  
                     <!-- Modelo del producto -->
                     <div class="form-group col-md-4">
                         <label for="modelo">Modelo</label>
@@ -65,12 +69,19 @@
                         <label for="marca">Marca</label>
                         <input type="text" class="form-control" id="marca" placeholder="marca del producto" required>
                     </div>
+                    <!-- Select de color -->
+                    <div class="col-md-3">
+                        <label for="slc_color">Color</label>
+                        <select class="form-select" aria-label="Default select example" id="slc_color" required>
+                            
+                          </select>
+                     </div>
                 </div>
                 <div class="row mb-2">
                     <!-- Precio del producto -->
                     <div class="form-group col-md-3">
                         <label for="precio">Precio</label>
-                        <input type="number" class="form-control" id="precio" placeholder="precio producto" required>
+                        <input type="text" class="form-control" id="precio" placeholder="precio producto" required>
                     </div>
                    
                     <!-- Cantidad del producto -->

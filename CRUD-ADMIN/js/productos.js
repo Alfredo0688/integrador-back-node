@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const bodyTablaProducto = document.querySelector("#tablaProducto");
 
   const selectCategoria = document.querySelector("#slc_categoria");
+  const selectColor = document.querySelector("#slc_color");
 
-  //cargar select
+  //cargar select categoria
   const fetchCategoria = async () => {
     try {
       const respuesta = await axios.get(`http://localhost:3030/categorias/`);
@@ -24,9 +25,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+    //cargar select colores
+    const fetchColores = async () => {
+      try {
+        const respuesta = await axios.get(`http://localhost:3030/colores/`);
+        const coleres = respuesta.data;
+        selectColor.innerHTML = "";
+        selectColor.innerHTML=(`<option> SELECCIONAR </option>`) 
+        coleres.forEach((color) => {
+          const optional = document.createElement(`option`);
+          optional.textContent = color.nombre;
+          optional.value=color.id;
+          selectColor.appendChild(optional);
+        });
+        
+      } catch (error) {
+        console.error(`Error al postear: ${error}`);
+      }
+    };
+
   const fetchProductos = async () => {
     try {
       const respuesta = await axios.get(`http://localhost:3030/productos/`);
+      
       const productos = respuesta.data;
       
       bodyTablaProducto.innerHTML = "";
@@ -96,22 +117,24 @@ document.addEventListener("DOMContentLoaded", () => {
       nombre: document.querySelector("#nombre").value,
       marca: document.querySelector("#marca").value,
       modelo: document.querySelector("#modelo").value,
+      cantidad:document.querySelector("#cantidad").value,
       precio: document.querySelector("#precio").value,
+      color: document.querySelector("#slc_color").value,
       foto: document.querySelector("#imagen").value,
       id_categoria: document.querySelector("#slc_categoria").value,
     };
-    console.log(nuevoProducto);
     try {
       await axios.post(`http://localhost:3030/productos/`, nuevoProducto);
       //limpiamos el formulario
-      formCrearPosteo.reset();
+      fetchProductos.reset();
       // recargue los posteos actualizado
       fetchProductos();
     } catch (error) {
-      console.error(`Error al postear: ${error}`);
+      console.log(`Error al postear`+error);
     }
   });
 
   fetchProductos();
   fetchCategoria();
+  fetchColores();
 });

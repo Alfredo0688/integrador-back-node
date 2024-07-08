@@ -1,10 +1,9 @@
-
 const db = require ("../data/db.js")
 
 const {DataTypes} = require ("sequelize")
-const categoriaModels = db.define("categorias",{
+const coloresModels = db.define("colores",{
     nombre:{type:DataTypes.STRING}
 })
 
 
-module.exports=categoriaModels
+module.exports=coloresModels
