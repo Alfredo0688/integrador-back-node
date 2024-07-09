@@ -27,6 +27,17 @@ const obtenerProducto = async (req, res) => {
   }
 };
 
+const obtenerProductoPorCategoria = async (req, res) => {
+  try {
+    const producto = await modeloProducto.findAll({where: {
+      id_categoria: req.params.id_categoria,
+    }})
+    res.json(producto);
+  } catch (error) {
+    res.json({ message: error.message });
+  }
+};
+
 const editarProducto = async (req, res) => {
   try {
     await modeloProducto.update(req.body, {
@@ -49,4 +60,4 @@ const borrarProducto = async (req,res) => {
   }
 };
 
-module.exports = { obtenerProductos, crearProducto,obtenerProducto,editarProducto,borrarProducto };
+module.exports = { obtenerProductos, crearProducto,obtenerProducto,editarProducto,borrarProducto,obtenerProductoPorCategoria };

@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       await axios.post(`http://localhost:3030/productos/`, nuevoProducto);
       //limpiamos el formulario
-      fetchProductos.reset();
+      formulario.reset();
       // recargue los posteos actualizado
       fetchProductos();
     } catch (error) {
