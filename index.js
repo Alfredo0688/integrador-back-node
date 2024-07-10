@@ -15,11 +15,6 @@ const coloresRouter = require("./routes/coloresRouter.js");
 const comentariosRouter = require("./routes/comentariosRouter.js");
 
 
-app.get("/", (req, res) => {
-  res.send(`PAGINA DE INICIO`);
-})
-
-
 
 app.listen(port, () => {
   conexionDB()
