@@ -4,6 +4,7 @@ const {Sequelize} = require ("sequelize")
 const db = new Sequelize("electronsa","root","",{
     host:"localhost",
     dialect : "mysql",
+    dialectModule: require('mysql2'),
     port:3306
 
 })
