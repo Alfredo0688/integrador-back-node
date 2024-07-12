@@ -35,13 +35,14 @@
                     <li class="nav-link"><a href="contacto.html">CONTACTO</a></li>
                 </ul>
             </nav>
-            <span class="hamburger-menu  material-symbols-outlined"><i class="fa fa-bars" aria-hidden="true"></i></span></span>
+            <span class="hamburger-menu  material-symbols-outlined"><i class="fa fa-bars"
+                    aria-hidden="true"></i></span></span>
         </div>
     </header>
-    <main id="seccionContacto">
-        <form class="container">
+    <main id="seccionRegistroUsuario">
+        <form class="container mt-5">
             <div class="row">
-                <h2>Contáctenos</h2>
+                <h2>Registro de usuario</h2>
             </div>
             <div class="row">
                 <div class="col-12 col-md-6">
@@ -56,29 +57,74 @@
                     <label for="apellido">Apellido</label>
                 </div>
                 <div class="col-12 col-md-6">
-                    <input name="apellido" id="apellido">
+                    <input type="text" name="apellido" id="apellido">
                 </div>
-
             </div>
-            <div class="row ">
+            <div class="row">
                 <div class="col-12 col-md-6">
-                    <label for="email">Email</label>
-
+                    <label for="email">Correo Eléctronico</label>
                 </div>
                 <div class="col-12 col-md-6">
-
                     <input type="email" name="email" id="email">
                 </div>
             </div>
-            <div class="row w-30">
-                <textarea rows="10" placeholder="Su mensaje" id="textarea"></textarea>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <label for="telefono">Telefono</label>
+                </div>
+                <div class="col-12 col-md-6">
+                    <input type="text" name="telefono" id="telefono">
+                </div>
             </div>
-            <div class="row w-25 mb-1">
-                <button class="btn btn-primary">Enviar</button>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <label for="direccion">Dirección</label>
+                </div>
+                <div class="col-12 col-md-6">
+                    <input type="text" name="direccion" id="direccion">
+                </div>
             </div>
-            <div class="row w-100 rowPersonalizado" id="respuesta">
+            
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <label for="codigo_postal">Código Postal</label>
+                </div>
+                <div class="col-12 col-md-6">
+                    <input type="text" name="codigo_postal" id="codigo_postal">
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <label for="provincia">Provincia</label>
+                </div>
+                <div class="col-12 col-md-6">
+                    <input type="text" name="provincia" id="provincia">
+                </div>
             </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <label for="nombre_usuario">Nombre de Usuario</label>
+                </div>
+                <div class="col-12 col-md-6">
+                    <input type="text" name="nombre_usuario" id="nombre_usuario">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <label for="clave">Clave</label>
+                </div>
+                <div class="col-12 col-md-6">
+                    <input type="password" name="clave" id="clave">
+                </div>
+            </div>
+
+
+
+            <div class="row w-25 mb-1">
+                <button type="button" id="btn_login" class="btn btn-primary">Ingresar</button>
+            </div>
+            <div class="row w-100 rowPersonalizado" id="respuesta"></div>
 
         </form>
     </main>
@@ -163,7 +209,10 @@
         </div>
 
     </footer>
-    <script src="./js/script.js"></script>
+    <!--   cargar el CDN de Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!--<script src="./js/script.js"></script>-->
+    <script src="./js/inicio_sesion.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

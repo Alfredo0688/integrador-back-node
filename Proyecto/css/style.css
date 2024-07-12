@@ -421,3 +421,16 @@ main#seccionNosotros p {
   border: 1px solid;
   background-color: rgba(255, 255, 255, 0.7);
 }
+
+/*sección registro de usuarios*/
+main#seccionRegistroUsuario{
+  height: 718px;
+}
+
+main#seccionRegistroUsuario form{
+  background-color: antiquewhite;
+}
+
+main#seccionRegistroUsuario form .row div{
+  text-align: center;
+}
