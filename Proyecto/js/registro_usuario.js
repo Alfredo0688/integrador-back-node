@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         
         const crearCliente = async ()=>{
             try {
-                await axios.post("http://localhost:3030/usuarios/",credencialesCliente);
+                await axios.post("http://localhost:3030/clientes/",credencialesCliente);
             } catch (error) {
                 console.error(`se ha producido el siguiente error al intentar crear un cliente : ${error.message}`)
             }
