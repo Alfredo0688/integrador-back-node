@@ -12,7 +12,15 @@ const obtenerUsuarios =async(req,res)=>{
     } catch (error) {
         res.json({messeger:error.messeger})
     }
+}
 
+const obtenerUsuario =async(req,res)=>{
+    try {
+        const usuario = await usuarioModel.findByPk(req.params.id);
+        res.json(usuario);
+    } catch (error) {
+        res.json({messeger:error.messeger})
+    }
 }
 
 const crearUsuario =async(req,res)=>{
@@ -46,4 +54,4 @@ try {
 }
 }
 
-module.exports ={obtenerUsuarios,crearUsuario,editarUsuario,borrarUsuario}
+module.exports ={obtenerUsuarios,obtenerUsuario,crearUsuario,editarUsuario,borrarUsuario}
