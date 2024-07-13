@@ -25,8 +25,8 @@ const obtenerUsuario =async(req,res)=>{
 
 const crearUsuario =async(req,res)=>{
     try {
-        await usuarioModel.create(req.body);
-        res.json("usuario creado correctamente");
+        const nuevoUsuario = await usuarioModel.create(req.body);
+        res.json(nuevoUsuario);
     } catch (error) {
         res.json({messege:error.messeger})
     }

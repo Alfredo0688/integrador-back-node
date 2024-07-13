@@ -1,52 +1,39 @@
 
-document.addEventListener("DOMContentLoaded", ()=>{
-    let pk_usuario = 0; 
-    document.querySelector("#form_registroUsuario").addEventListener("submit",(evento)=>{
+document.addEventListener("DOMContentLoaded", () => {
+
+    document.querySelector("#form_registroUsuario").addEventListener("submit", (evento) => {
         evento.preventDefault();
         console.log("clickeaste el btn");
 
         //los campo clave del objeto deben ser igual a los del modelo
         const credencialesUsuario = {
-            usuario : document.getElementById("nombre_usuario").value,
-            contrasenia : document.getElementById("clave").value
+            usuario: document.getElementById("nombre_usuario").value,
+            contrasenia: document.getElementById("clave").value
         }
 
         //registrar primero el usuario
-        const crearUsuario = async ()=>{
+        const crearUsuario = async () => {
             try {
-                const usuario = await axios.post("http://localhost:3030/usuarios/",credencialesUsuario)
-                pk_usuario = usuario.id;
+                const usuario = await axios.post("http://localhost:3030/usuarios/", credencialesUsuario);
+                dataUsuario = usuario.data;//obtenemos como respuesta el user creado recientemente
+                await axios.post("http://localhost:3030/clientes/", {
+                    nombre: document.getElementById("nombre").value,
+                    apellido: document.getElementById("apellido").value,
+                    email: document.getElementById("email").value,
+                    telefono: document.getElementById("telefono").value,
+                    direccion: document.getElementById("direccion").value,
+                    codigo_postal: document.getElementById("codigo_postal").value,
+                    provincia: document.getElementById("provincia").value,
+                    id_usuario: dataUsuario.id//obtenemos el id del usuario para enviarlo como FK del cliente
+                });
+
             } catch (error) {
                 console.error(`se ha producido el siguiente error al intentar crear un usuario : ${error.message}`)
             }
-            
+
         }
         crearUsuario();
 
-        //pk_usuario = usuario.id //obtenemos la pk del usuario
-        
-        const credencialesCliente = {
-            nombre : document.getElementById("nombre").value,
-            apellido : document.getElementById("apellido").value,
-            email : document.getElementById("email").value,
-            telefono : document.getElementById("telefono").value,
-            direccion : document.getElementById("direccion").value,
-            codigo_postal : document.getElementById("codigo_postal").value,
-            provincia : document.getElementById("provincia").value,
-            id_usuario : pk_usuario
-        }
-        
-        console.log(credencialesCliente);
-        const crearCliente = async ()=>{
-            try {
-                await axios.post("http://localhost:3030/clientes/",credencialesCliente);
-            } catch (error) {
-                console.error(`se ha producido el siguiente error al intentar crear un cliente : ${error.message}`)
-            }
-            
-        }
-
-        //crearCliente();
     })
 
 });

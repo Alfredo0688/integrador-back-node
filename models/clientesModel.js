@@ -9,6 +9,7 @@ const clientesModel = db.define("clientes",{
     telefono : {type:DataTypes.INTEGER},
     direccion : {type:DataTypes.STRING},
     codigo_postal : {type:DataTypes.STRING},
+    provincia : {type:DataTypes.STRING},
     id_usuario : {type:DataTypes.INTEGER}
     })
 
