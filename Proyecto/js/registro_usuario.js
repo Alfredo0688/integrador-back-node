@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    
+    let pk_usuario = 0; 
     document.querySelector("#form_registroUsuario").addEventListener("submit",(evento)=>{
         evento.preventDefault();
         console.log("clickeaste el btn");
@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         const crearUsuario = async ()=>{
             try {
                 const usuario = await axios.post("http://localhost:3030/usuarios/",credencialesUsuario)
+                pk_usuario = usuario.id;
             } catch (error) {
                 console.error(`se ha producido el siguiente error al intentar crear un usuario : ${error.message}`)
             }
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }
         crearUsuario();
 
-        const pk_usuario = usuario.id //obtenemos la pk del usuario
+        //pk_usuario = usuario.id //obtenemos la pk del usuario
         
         const credencialesCliente = {
             nombre : document.getElementById("nombre").value,
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             id_usuario : pk_usuario
         }
         
+        console.log(credencialesCliente);
         const crearCliente = async ()=>{
             try {
                 await axios.post("http://localhost:3030/clientes/",credencialesCliente);
@@ -44,7 +46,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             
         }
 
-        crearCliente();
+        //crearCliente();
     })
 
 });

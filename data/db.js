@@ -1,7 +1,7 @@
 const {Sequelize} = require ("sequelize")
 /*  nombre de la base de datos -  user - contraseña - {donde esta alojada?,lenguaje, puerto} */
 
-const db = new Sequelize("prueba","root","",{
+const db = new Sequelize("electronsa","root","",{
     host:"localhost",
     dialect : "mysql",
     dialectModule: require('mysql2'),
