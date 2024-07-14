@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
             try {
                 const usuario = await axios.post("http://localhost:3030/usuarios/", credencialesUsuario);
                 dataUsuario = usuario.data;//obtenemos como respuesta el user creado recientemente
-                /*  
+                
                 await axios.post("http://localhost:3030/clientes/", {
                     nombre: document.getElementById("nombre").value,
                     apellido: document.getElementById("apellido").value,
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     codigo_postal: document.getElementById("codigo_postal").value,
                     provincia: document.getElementById("provincia").value,
                     id_usuario: dataUsuario.id//obtenemos el id del usuario para enviarlo como FK del cliente
-                });*/
+                });
 
             } catch (error) {
                 if(error.response&&error.response.status===422){

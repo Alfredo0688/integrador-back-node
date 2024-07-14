@@ -434,3 +434,13 @@ main#seccionRegistroUsuario form{
 main#seccionRegistroUsuario form .row div{
   text-align: center;
 }
+
+main#seccionRegistroUsuario form div.row{
+  text-align: center;
+  margin: 2% 0;
+}
+
+main#seccionRegistroUsuario form div.row button{
+  width: 20%;
+  margin: auto;
+}
