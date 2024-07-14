@@ -1,8 +1,15 @@
 const modeloCliente = require("../models/clientesModel")
 
+/*Validaciones*/
+const bodyParser = require("body-parser");//middelware para manejar solicitudes
+const {check, validationResult} = require("express-validator");
+//check : para hacer validaciones a los inputs
+//validationResults: resultados de esas validaciones
+
 /* CRUD - CREATE - READ - UPDATE - DELETE */
 
 /* FUNCION PARA TRAER TODOS LOS POSTEOS = READ - GET */
+
 
 const obtenerClientes = async (req, res) => {
     try {

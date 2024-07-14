@@ -14,7 +14,9 @@ const estadoRouter = require("./routes/estadoRouter.js");
 const coloresRouter = require("./routes/coloresRouter.js");
 const comentariosRouter = require("./routes/comentariosRouter.js");
 
-
+const bodyParser = require("body-parser") // middleware para manejar solicitudes
+app.use(bodyParser.json()) // parsear datos en formato JSON
+app.use(bodyParser.urlencoded({ extended: true })); // toma los datos en formato URL-encoded y los configura
 
 app.listen(port, () => {
   conexionDB()
